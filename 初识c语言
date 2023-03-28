@@ -1,0 +1,141 @@
+//初识c语言
+#include<stdio.h>
+int main()  //主函数-程序入口-main函数有且只有一个 int是整型的意思 main前面的int表示main函数调用返回一个整型值
+{
+	printf("hello world\n");//函数-print function-printf-打印函数
+		return 0; //返回0
+}
+
+
+//char字符类型
+#include<stdio.h>
+int main()
+{
+	char ch = 'A';
+	printf("%c\n", ch);
+	return 0;
+}
+
+
+//整型
+#include<stdio.h>
+int main()
+{
+	int age = 20;
+	printf("%d\n", age);
+	return 0;
+}
+
+
+
+
+//长整型
+#include<stdio.h>
+int main()
+{
+	long num  = 100;
+	printf("%d\n", num);
+	return 0;
+}
+
+
+
+//单精度浮点型
+#include<stdio.h>
+int main()
+{
+	float f  = 5.0;
+	printf("%f\n", f);
+	return 0;
+} 
+//运行结果：5.000000
+
+
+
+
+//双精度浮点型
+#include<stdio.h>
+int main()
+{
+	double  d = 3.14;
+	printf("%f\n", d);
+	return 0;
+}
+//运行结果：3.140000
+
+
+
+#include<stdio.h>
+int main()
+{
+	short age = 20;
+	float weight = 118.5;
+	printf("%d,%f\n",age,weight);
+	return 0;
+}
+
+
+
+//两个数相加
+#include<stdio.h>
+int main()
+{
+	int num1 =0;
+	int num2 =0;
+	int sum = 0;
+  //输入数据-使用输入函数scanf
+  scanf_s("%d%d", &num1, &num2);  //scanf不能运行 暂时不知道为啥！！！！！！！ 
+	sum = num1 + num2;
+	printf("sum = %d\n",sum);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
