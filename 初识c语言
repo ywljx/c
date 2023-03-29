@@ -93,4 +93,4 @@ int main()
 
 //scanf是c语言提供的  scanf_s不是标准c语言提供的，是vs编译器提供的
 //不建议使用scanf_s  无跨平台性/可移植性
-//解决方法：代码最前面添加  #define _CRT_SECURE_NO_WARNINGS 1
+//解决方法：源文件第一行添加  #define _CRT_SECURE_NO_WARNINGS 1
