@@ -1,0 +1,63 @@
+//字面常量 ： 数字 
+
+//const修饰的常变量
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+int main()
+{ 
+	const int num = 1;
+	printf("%d\n", num);
+	num = 2;
+	printf("%d\n",num);
+	return 0;
+}
+//错误：左值指定const对象：
+
+
+// #define修饰的常变量
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+#define MAX 10
+int main()
+{ 
+	int arr[MAX] = { 0 };
+	printf("%d\n",MAX);
+	return 0;
+}
+
+
+//枚举常量man,women,secret
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+enum SEX
+{
+	man,
+	women,
+	secret
+};
+int main()
+{ 
+	printf("%d\n",man); //0
+	printf("%d\n", women);//1
+	printf("%d\n", secret);//2
+	return 0;
+}
+
+
+//枚举常量 颜色
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+enum Color
+{
+	red,
+	yellow,
+	blue
+};
+int main()
+{ 
+	enum Color color = blue;
+	printf("%d\n",color);
+	return 0;
+}
+
+
