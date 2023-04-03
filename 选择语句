@@ -1,10 +1,16 @@
-#include <stdio.h>
-
-int main() {
+//选择语句
+//if 语句
+//加入比特 你要好好学习吗？
+//1——好好学习——得到一份好offer
+//0——不好好学习——回家种地
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+int main()
+{
 	int input = 0;
 	printf("加入比特\n");
-	printf("你要好好学习吗?(1/0)>:\n");
-	scanf("%d", &input); // 1/0
+	printf("你要好好学习吗？(1/0)>:");
+	scanf("%d", &input);
 	if (input == 1)
 		printf("好offer\n");
 	else
