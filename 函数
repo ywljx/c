@@ -1,0 +1,26 @@
+//函数的调用
+//自定义函数——Add——加法函数
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h> 
+int Add(int x, int y)
+{
+	int z = x + y;
+	return z;
+}
+int main()
+{
+	int num1 = 10;
+	int num2 = 20;
+	int sum = 0;
+	sum = Add(num1, num2);
+	printf("%d\n", sum);
+	int a = 100;
+	int b = 200;
+	sum = Add(a, b);
+	printf("%d\n", sum);
+	sum = Add(2, 3);
+	printf("%d\n", sum);
+	return 0;
+}
+
