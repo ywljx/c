@@ -22,8 +22,8 @@ int main()
 }
 
 
-操作符
-取模 %
+//操作符
+//取模 %
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h> 
 int main()
@@ -72,12 +72,13 @@ int main()
 	//011
 	//101
 	//110
+	// 相同为零，不同为一，
 	printf("%d", e);
 	return 0;
 }
 
 
-赋值操作符
+//赋值操作符
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h> 
 int main()
@@ -128,3 +129,75 @@ int main()
 	
 	return 0;
 }
+
+
+// ~ 对一个数按位（二进制位）取反
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	int b = ~a;
+	//00000000000000000000000000000000
+	//11111111111111111111111111111111
+	//原码，反码，补码
+	//负数在内存中存储的时候，存储的是二进制的补码
+	//11111111111111111111111111111111
+	//11111111111111111111111111111110
+	//10000000000000000000000000000001
+	//printf 使用的，打印的是这个数的原码
+    printf("%d\n", b);
+	return 0;
+}
+
+
+//（类型） 强制类型转换
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = (int)3.14;
+	printf("%d\n", a);
+	return 0;
+}
+
+// &&逻辑与
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	int c = a && b;//同真为真，其余为假
+	printf("%d\n", c);
+	return 0;
+}
+
+
+// ||  逻辑或
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	int c = a || b;//有真为真，全假为假
+	printf("%d\n", c);
+	return 0;
+}
+
+
+//条件操作符  三目操作符
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int max = 0;
+	max = (a > b ? a:b);
+	printf("%d\n", max);
+	return 0;
+}
+
+
