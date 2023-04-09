@@ -4,7 +4,7 @@ int main()
 {
 	int a = 10;
 	&a;//取地址
-	printf("%p\n", a);
+	printf("%p\n", &a);
 	return 0;
 }
 
