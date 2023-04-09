@@ -45,3 +45,18 @@ int main()
 	printf("%d\n",sizeof(pc));
 	return 0;
 }
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	double d = 3.14;
+	double* pd = &d;
+	*pd = 5.5;
+	printf("%lf\n", d);
+	printf("%lf\n", *pd);
+	return 0;
+}
+
+
