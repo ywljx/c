@@ -1,0 +1,293 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int age = 10;
+	if (age < 18)
+		printf("未成年\n");
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int age = 20;
+	if (age < 18)
+		printf("未成年\n");
+	else
+		printf("成年\n");
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int age = 45;
+	if (age < 18)
+		printf("未成年\n");
+	else if (age >= 18 && age < 28)
+		printf("青年\n");
+	else if (age >= 28 && age < 50)
+		printf("壮年\n");
+	else if (age >= 50 && age < 90)
+		printf("老年\n");
+	else
+		printf("暮年\n");
+	return 0;
+}
+
+
+//悬空else
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	int b = 2;
+	if (a == 1)
+		if (b == 2)
+			printf("hehe\n");
+	else                        //else 就近原则:跟距离最近的未匹配的if匹配
+		printf("haha\n");
+	return 0;
+}  //打印为空
+
+
+
+//输出1-100的的奇数
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	while (i <= 100)
+	{
+		if (i % 2 == 1)
+			printf("%d ", i);
+		i++;
+	}
+	return 0;
+}
+
+
+//正常书写
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int day = 0;
+	day = 3;
+	scanf_s("%d", &day);
+	if (1 == day)
+		printf("星期一\n");
+	else if(2 == day)
+		printf("星期二\n");
+	else if(3 == day)
+		printf("星期三\n");
+	else if(4 == day)
+		printf("星期四\n");
+	else if(5 == day)
+		printf("星期五\n");
+	else if(6 == day)
+		printf("星期六\n");
+	else if(7 == day)
+		printf("星期天\n");
+	return 0;
+}
+//switch 语句
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int day = 0;
+	scanf_s("%d", &day);
+	switch (day)
+	{
+	case 1:
+		printf("星期一\n");
+		break;
+	case 2:
+		printf("星期二\n");
+		break;
+	case 3:
+		printf("星期三\n");
+		break;
+	case 4:
+		printf("星期四\n");
+		break;
+	case 5:
+		printf("星期五\n");
+		break;
+	case 6:
+		printf("星期六\n");
+		break;
+	case 7:
+		printf("星期天\n");
+		break;
+	}
+	return 0;
+}
+
+
+//switch 语句
+//case后面的break 不一定必须有
+//default 用来处理非法状况   default与case的顺序无所谓，建议放在后面
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int day = 0;
+	scanf_s("%d", &day);
+	switch (day)
+	{
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+		printf("工作日\n");
+		break;
+	case 6:
+	case 7:
+		printf("休息日\n");
+		break;
+	default:
+		printf("输入错误\n");
+	break;
+	}
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int n = 1;
+	int m = 2;
+	switch (n)
+	{
+	case 1:
+		m++;
+	case 2:
+		n++;
+	case 3:
+		switch (n)
+		{
+		case 1: 
+			n++;
+		case 2:
+			m++;
+			n++;
+			break;
+		}
+	case 4:
+		m++;
+		break;
+	default:
+		printf("输入错误\n");
+	break;
+	}
+	printf("m = %d,n = %d", m, n);
+	return 0;
+}//答案： m=5  n=3
+
+
+
+//循环语句  while语句
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	while (i <= 10)
+	{
+		printf("%d \n",i);
+		i++;
+	}
+	
+	return 0;
+}  // 1 2 3 4 5 6 7 8 9 10
+
+//break  跳出循环
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	while (i <= 10)
+	{
+		if (i == 5)
+			break;
+		printf("%d \n",i);
+		i++;
+	}
+	
+	return 0;
+}// 1 2 3 4
+
+//continue 继续 跳过本次循环后面的代码
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	while (i <= 10)
+	{
+		if (i == 5)
+			continue;
+		printf("%d \n",i);
+		i++;
+	}
+	
+	return 0;
+}// 1 2 3 4 5...(5死循环）
+
+//continue 是用于终止本次循环的，也就是本次循环中continue后边的代码不会再执行，而是直接跳转到while语句的判断部分，进行下一次循环的入口判断。
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	while (i <= 10)
+	{
+		i++;
+		if (i == 5)
+			continue;
+		printf("%d \n",i);
+	}
+	
+	return 0;
+}// 2 3 4 6 7 8 9 10 11
+
+
+//getchar  putchar
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int ch = getchar();
+	putchar(ch);
+	printf(" %c\n", ch);
+	return 0;
+}//输入b  输出b b
+
+
+
+//ctrl+z 结束该代码
+//EOF- end of file-> -1
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar()) != EOF)
+	{
+		putchar(ch);
+	}
+	return 0;
+}
