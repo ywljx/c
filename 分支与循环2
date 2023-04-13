@@ -53,3 +53,33 @@ int main()
 
 
 
+//不可在for循环体内修改1循环变量，防止for循环失去控制
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	for (a = 0; a < 10; a++)
+	{
+		if(a = 5)
+		printf("haha\n");
+		printf("hehe\n");
+	}
+	return 0;
+}//haha hehe  一直死循环
+
+
+//建议for语句的循环控制变量的取值采用“前闭后开区间”写法
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+	int i = 0;
+	//十次循环  十次打印  十个元素
+	for (i = 0; i < 10; i++)  // i<=9  也可以但是不建议
+	{
+		printf("%d\n",arr[i]);
+	}
+
+	return 0;
