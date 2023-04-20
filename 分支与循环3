@@ -370,3 +370,78 @@ int main()
 	} while (input);
 	return 0;
 }
+
+
+
+
+
+goto语句
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+	again:
+	printf("hello world\n");
+	goto a;
+	printf("你好\n");
+  a:
+	printf("hehe\n");
+	return 0;
+}
+
+
+//关机程序
+//goto语句的方式
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char input[20] = { 0 };
+	//shutdowm -s -t 60
+	//system() - 执行系统命令的
+	system("shutdown -s -t 8640");
+again:
+	printf("请注意，你的电脑将在一分钟后关机，如果输入：abc，就取消关机\n请输入:>");
+	scanf("%s", input);
+	if (strcmp(input, "abc") == 0) //比较两个字符串-strcmp()
+	{
+		system("shutdown -a ");
+	}
+	else
+	{
+		goto again;
+	}
+	return 0;
+}
+
+
+
+//关机程序
+//循环语句的方式
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char input[20] = { 0 };
+	//shutdowm -s -t 60
+	//system() - 执行系统命令的
+	system("shutdown -s -t 8640");
+	while (1)
+	{
+		printf("请注意，你的电脑将在一分钟后关机，如果输入：abc，就取消关机\n请输入:>");
+		scanf("%s", input);
+		if (strcmp(input, "abc") == 0) //比较两个字符串-strcmp()
+		{
+			system("shutdown -a ");
+			break;
+		}
+	}
+	return 0;
+}
