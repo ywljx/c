@@ -1,0 +1,81 @@
+//函数递归
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{	
+	printf("hehe\n");
+	main();
+	return 0;
+}//结果： hehe 死循环
+//递归常见的错误：Stack overflow 栈溢出
+
+
+
+
+//接受一个整型值（无符号），按照顺序打印他的每一位。例如：输入：1234，输出：1 2 3 4.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void print(int n)
+{
+	if (n > 9)
+	{
+		print(n / 10);
+	}
+	printf("%d ", n % 10);
+}
+int main()
+{	
+	unsigned int num = 0;
+	scanf("%d", &num);
+	print(num);
+	return 0;
+}
+
+
+
+
+
+//编写函数，求字符串的长度。
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+int my_strlen(char* str)
+{
+	int count = 0;
+	while (*str !='\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "abc";
+	int len = my_strlen(arr);//数组传参，传过去的不是整个数组，而是第一个元素的地址
+	printf("%d\n", len);
+	return 0;
+}
+
+
+
+
+
+//编写函数不允许创建临时变量，求字符串的长度。
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+int my_strlen(char* str)
+{
+	if (*str != '\0')
+		return 1 + my_strlen(str + 1);
+	else
+		return 0;
+}
+int main()
+{
+	char arr[] = "abcd";
+	int len = my_strlen(arr);//数组传参，传过去的不是整个数组，而是第一个元素的地址
+	printf("%d\n", len);
+	return 0;
+}
