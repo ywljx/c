@@ -64,13 +64,118 @@ int main()
 int main()
 {
 	int a = 5;
-
 	//00000000000000000000000000000101
 	int b = a << 1;
 	printf("a = %d\n", b);
 	return 0;
+}//10
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	//& - 按2进制位与
+	int a = 3;
+	int b = 5;
+	int c = a & b;
+	//00000000000000000000000000000011
+	//00000000000000000000000000000101
+	//00000000000000000000000000000001
+	printf("%d\n", c);
+	return 0;
 }
 
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	// | - 按2进制位或
+	int a = 3;
+	int b = 5;
+	int c = a | b;
+	//00000000000000000000000000000011
+	//00000000000000000000000000000101
+	//00000000000000000000000000000111
+	printf("%d\n", c);
+	return 0;
+}
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	// ^ - 按2进制位异或
+	//相同为0 相异为1
+	int a = 3;
+	int b = 5;
+	int c = a ^ b;
+	//00000000000000000000000000000011
+	//00000000000000000000000000000101
+	//00000000000000000000000000000110
+	printf("%d\n", c);
+	return 0;
+}
+
+
+
+
+//不创建临时变量实现两个数的交换
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	printf("before: a=%d b=%d\n", a, b);
+	
+	////加减法 可能会溢出
+	//a = a + b;
+	//b = a - b;
+	//a = a - b;
+
+	//异或的方法
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	//a:011 110     101
+	//b:101     011
+	printf("after: a=%d b=%d\n", a, b);
+	return 0;
+}
+
+
+
+
+//不创建临时变量实现两个数的交换
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	printf("before: a=%d b=%d\n", a, b);
+	
+	////加减法 可能会溢出
+	//a = a + b;
+	//b = a - b;
+	//a = a - b;
+
+	//异或的方法
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	//a:011 110     101
+	//b:101     011
+	//原理： a^0=a   b^b=0  
+	printf("after: a=%d b=%d\n", a, b);
+	return 0;
+}
 
 
 
