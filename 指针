@@ -128,3 +128,82 @@ int main()
 	*p = 20;
 	return 0;
 }
+
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int* a = 10;
+	int* pa = &a;//初始化
+	int* p = NULL;//NULL- 用来初始化指针的，给指针赋值 （同int a = 0;）
+	return 0;
+}
+
+
+
+
+
+
+//指针的运算 指针 +- 整数
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+	int i = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int* p = arr;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", *p);
+		p = p + 1;//p++
+	}
+	return 0;
+}
+
+
+
+
+
+
+//指针的运算 指针 - 指针
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+	printf("%d\n", &arr[9] - &arr[0]);
+	//指针-指针 得到的是中间元素的个数（大地址-小地址）
+	return 0;
+}
+
+
+
+
+//指针的运算 指针 - 指针
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	char* start = str;
+	char* end = str;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - start;
+}
+int main()
+{
+	//strlen-求字符串长度
+	//递归-模拟实现了strlen-计数器的方式1，递归的方式2
+	//方式3
+	char arr[] = "bit";
+	int len = my_strlen(arr);
+	printf("%d\n", len);
+	return 0;
+}
