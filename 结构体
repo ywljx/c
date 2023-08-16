@@ -123,4 +123,164 @@ int main()
 
 
 
+//6分（满分10分）
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void my_strcpy(char* dest, char* src)
+{
+	while (*src != '\0')
+	{
+		*dest = *src;
+			src++;
+			dest++;
+	}
+	*dest = *src;
 
+}
+int main()
+{
+	char arr1[] = "#########################";
+	char arr2[] = "bit";
+	my_strcpy(arr1,arr2);
+	printf("%s", arr1);
+	return 0;
+}
+
+//优化 7分
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void my_strcpy(char* dest, char* src)
+{
+	while (*dest++ = *src++)
+	{
+		;
+	}
+}
+int main()
+{
+	char arr1[] = "#########################";
+	char arr2[] = "bit";
+	my_strcpy(arr1,arr2);
+	printf("%s", arr1);
+	return 0;
+}
+
+
+//优化  8分
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+void my_strcpy(char* dest, char* src)
+{
+	assert(dest != NULL);//断言
+	assert(src != NULL);//()里面表达式为真，无事发生，为假，会报错 
+	while (*dest++ = *src++)
+	{
+		;
+	}
+}
+int main()
+{
+	char arr1[] = "#########################";
+	char arr2[] = "bit";
+	my_strcpy(arr1,NULL);
+	printf("%s", arr1);
+	return 0;
+}
+
+
+//优化  9分
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+void my_strcpy(char* dest,const char* src)
+{
+	assert(dest != NULL);//断言
+	assert(src != NULL);//()里面表达式为真，无事发生，为假，会报错 
+	while (*dest++ = *src++)
+	{
+		;
+	}
+}
+int main()
+{
+	char arr1[] = "#########################";
+	char arr2[] = "bit";
+	my_strcpy(arr1,NULL);
+	printf("%s", arr1);
+	return 0;
+}
+
+
+
+//const
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	const int num = 10;
+	const int * p = &num;
+	*p = 20;//err   const 放在指针变量的左边时,修饰的是*p,也就是说:不能通过p来改变*p(num)的值，
+	printf("%d\n", num);
+
+
+	const int num = 10;
+    int * const p = &num;
+	*p = 20;
+	int n = 100;
+	p = &n;//err   const 放在指针变量的右边时,修饰的是指针变量p本身,也就是说:p不能被改变了,
+	printf("%d\n", num);
+	return 0;
+}
+
+
+
+//最终优化 10分
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+char* my_strcpy(char* dest, const char* src)
+{
+	char* ret = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+//把src指向的字符串拷贝到dest指向的空间，包含'\0'字符
+	while (*dest++ = *src++)
+	{
+	    ;
+	}
+	return ret;
+}
+int main()
+{
+	char arr1[] = "#########################";
+	char arr2[] = "bit";
+	printf("%s", my_strcpy(arr1, arr2));
+	return 0;
+}
+
+
+
+
+//对strlen进行优化
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+int my_strlen(const char* str)
+{
+	int count = 0;
+	assert(str != NULL);
+	while (*str !='\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "abcdef";
+	int len = my_strlen(arr);
+	printf("%d\n",len);
+	return 0;
+}
